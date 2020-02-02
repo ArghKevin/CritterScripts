@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name              HamsterHelper
 // @namespace         http://discord.gg/G3PTYPy
-// @version           4
+// @version           5
 // @require           http://code.jquery.com/jquery-3.4.1.min.js
 // @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/HamsterHelper.user.js
 // @description       Adds a few new features to BoxCritters to improve your experience!
 // @author            Kinju/slaggo/Blackout03
-// @creativehelp      PenguinGiraffe
+// @creativeaid      PenguinGiraffe
 // @match             https://boxcritters.com/play/*
 // @match             http://boxcritters.com/play/*
 // @icon              https://cdn.discordapp.com/attachments/673345692697231413/673346230394421249/unknown.png
@@ -482,10 +482,4 @@ var BlueBox = document.querySelector ("#Blue");
         BEEPBtn.addEventListener ("click", BEEP);
     }
 }, true);
-
-
-//
-
-
-
 
