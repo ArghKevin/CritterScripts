@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              HamsterHelper
 // @namespace         http://discord.gg/G3PTYPy
-// @version           2
+// @version           3
 // @require           http://code.jquery.com/jquery-3.4.1.min.js
 // @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/autocritter.user.js
 // @description       Adds a few new features to BoxCritters to improve your experience!
