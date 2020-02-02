@@ -3,7 +3,7 @@
 // @namespace         http://discord.gg/G3PTYPy
 // @version           3
 // @require           http://code.jquery.com/jquery-3.4.1.min.js
-// @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/autocritter.user.js
+// @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/HamsterHelper.user.js
 // @description       This script will put your BoxCritters client on adderall, with some acid sprinkled in for good measure
 // @author            Kinju/slaggo/Blackout03
 // @creativeaid       Penguin Giraffe
