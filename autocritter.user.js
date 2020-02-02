@@ -3,7 +3,7 @@
 // @namespace         http://discord.gg/G3PTYPy
 // @version           2
 // @require           http://code.jquery.com/jquery-3.4.1.min.js
-// @UpdateUrl    https://github.com/Blackout03/CrittersCrittersCritters/raw/master/CrittersCrittersCritters.user.js
+// @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/autocritter.user.js
 // @description       Adds a few new features to BoxCritters to improve your experience!
 // @author            Kinju/slaggo/Blackout03
 // @creativehelp      PenguinGiraffe
