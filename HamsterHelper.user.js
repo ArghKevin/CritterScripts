@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              HamsterHelper
 // @namespace         http://discord.gg/G3PTYPy
-// @version           3
+// @version           5
 // @require           http://code.jquery.com/jquery-3.4.1.min.js
 // @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/HamsterHelper.user.js
 // @description       This script will put your BoxCritters client on adderall, with some acid sprinkled in for good measure
@@ -42,13 +42,14 @@ var delay = ( function() {
 window.addEventListener('load', function() {
 
 //button style = "color:blue;background-color:red
+    var x=document.getElementById("myAudio");
     var chatBar = document.getElementsByClassName("input-group")[0];
     var chatBox = document.getElementsByClassName("row justify-content-center")[1];
     var jokeBtnHTML = `<span class="input-group-btn"><button id="jokebtn" class="btn btn-primary">Joke</button></span>`;
     var clapBtnHTML = `<span class="input-group-btn"><button id="clapbtn" class="btn" for="clapBtn" style="background-color:black; border-color:#71e643; color:#71e643">Items</button></span>`;
     var balloonoffBtnHTML = `<span class="input-group-btn"><button id="balloonoffbtn" class="btn btn-primary">Chat Balloons On/Off</button></span>`;
     var nametagsonoffBtnHTML = `<span class="input-group-btn"><button id="nametagsonoffbtn" class="btn btn-primary">Name Tags On/Off</button></span>`;
-    var spacemodeHTML = `<div id="smDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="spacemode"><label class="form-check-label" for="spacemode" style="color:#000000;">Space Mode</label></span></div>`;
+    var spacemodeHTML = `<div id="smDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="spacemode"><label class="form-check-label" for="spacemode" style="color:#000000;">WIndows</label></span></div>`;
     var darkmodeHTML = `<div id="dmDiv" class="row justify-content-center"><span><input class="form-radio-input" type="checkbox" value="" id="darkmode"><label class="form-check-label" for="darkmode" style="color:#000000;">Dark Mode</label></span></div>`;
     var PurpleHTML = `<div id="pDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Purple"><label class="form-check-label" for="Purple" style="color:rgb(76, 0, 164);">PURPLE</label></span></div>`;
     var BlueHTML = `<div id="bDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Blue"><label class="form-check-label" for="Blue" style="color:#2A2D99;">Blue</label></span></div>`;
@@ -57,7 +58,7 @@ window.addEventListener('load', function() {
     var OGHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="OG"><label class="form-check-label" for="OG" style="color:#2897BD;">OG</label></span></div>`;
     var GreenHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Green"><label class="form-check-label" for="Green" style="color:#14A40B;">Green</label></span></div>`;
     var YellowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Yellow"><label class="form-check-label" for="Yellow" style="color:#E1B100;">Yellow</label></span></div>`;
-    var GradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Gradient"><label class="form-check-label" for="Gradient" style="color:#000000;">Gradient</label></span></div>`;
+    var GradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Gradient"><label class="form-check-label" for="Gradient" style="color:#000000;">Gradient(wip)</label></span></div>`;
     var lightmodeHTML = `<div id="lmDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="lightmode"><label class="form-check-label" for="lightmode" style="color:#000000;">Light Mode</label></span></div>`;
     var freeitemBtnHTML = `<span class="input-group-btn"><button id="freeitembtn" class="btn btn-primary">new items</button></span>`;
     var JoinTavernBtnHTML = `<span class="input-group-btn"><button id="JoinTavernbtn" class="btn btn-primary">Join Tavern</button></span>`;
@@ -68,10 +69,10 @@ window.addEventListener('load', function() {
     var PopBtnHTML = `<span class="input-group-btn"><button id="Popbtn" class="btn btn-primary">room pop</button></span>`;
     var ExtraBtnHTML = `<span class="input-group-btn"><button id="Extrabtn" class="btn btn-primary">hey</button></span>`;
     var BEEPBtnHTML = `<span class="input-group-btn"><button id="BEEPbtn" class="btn btn-primary">BEEP!</button></span>`;
-    var InvisibleBtnHTML = `<span class="input-group-btn"><button id=InvisibleBtn" class="btn btn-lg" for="Invisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;">nice find</button></span>`
-    var SecondInvisibleBtnHTML = `<span class="input-group-btn"><button id=SecondInvisibleBtn" class="btn btn-lg" for="SecondInvisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;">nice findx</button></span>`
+    var InvisibleBtnHTML = `<span class="input-group-btn"><button id=InvisibleBtn" class="btn btn-lg" for="Invisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" onClick="FontChange">fontchange</button></span>`
+    var SecondInvisibleBtnHTML = `<span class="input-group-btn"><button id=SecondInvisibleBtn" class="btn btn-lg" for="SecondInvisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default; onClick="$enable-gradients" ()">P  a  u  s  e_____</button></span>`
     var LogoutBtnHTML = `<span class="input-group-btn"><button id="Logoutbtn" class="btn btn-primary" onclick="world.logout()">ez Logout</button></span>`;
-
+var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="btn btn-primary" onclick="world.login(myPlayer.sessionTicket)">relog</button></span>`;
     chatBar.insertAdjacentHTML('afterend', clapBtnHTML);
     chatBar.insertAdjacentHTML('afterend', jokeBtnHTML);
     chatBar.insertAdjacentHTML('afterend', BEEPBtnHTML);
@@ -92,7 +93,8 @@ window.addEventListener('load', function() {
     chatBox.insertAdjacentHTML('afterend', darkmodeHTML);
     chatBox.insertAdjacentHTML('afterend', lightmodeHTML);
     chatBar.insertAdjacentHTML('afterend', LogoutBtnHTML);
-    chatBox.insertAdjacentHTML('afterend', JoinChristmasTavernBtnHTML);
+    chatBox.insertAdjacentHTML('afterend', xxtraBtnHTML);
+        chatBox.insertAdjacentHTML('afterend', JoinChristmasTavernBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinCrashSiteBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinForestBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinSnowmanVillageBtnHTML);
@@ -101,7 +103,7 @@ window.addEventListener('load', function() {
     chatBox.insertAdjacentHTML('afterend', InvisibleBtnHTML);
 
     if (localStorage.getItem("theme") == "space") {
-        document.body.style = "background:url('https://cdn.discordapp.com/attachments/319000727332716544/570223902953963521/Mountain_Background.png');";
+        document.body.style = "background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2015%2F12%2F126274-nature-landscape-sky-hill-grass-field-clouds-Windows_XP.jpg&f=1&nofb=1');";
         document.getElementById("spacemode").checked = true;
     }
 
@@ -170,7 +172,10 @@ window.addEventListener('load', function() {
 function JoinSnowmanVillage() {
     world.sendMessage("/join snowman_village")
 }
-
+function FontChange(){
+    document.getElementById("Popbtn").style.fontFamily =
+        "Impact,Charcoal,sans-serif";
+}
 function JoinForest() {
     world.sendMessage("/join forest")
 }
@@ -329,7 +334,7 @@ function BEEP() {
     function spacemodeToggle() {
         if(spacemodeBox.checked == true) {
             localStorage.setItem("theme", "space");
-            document.body.style = "background:url('https://cdn.discordapp.com/attachments/319000727332716544/570223902953963521/Mountain_Background.png');transition:1.5s;";
+            document.body.style = "background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2015%2F12%2F126274-nature-landscape-sky-hill-grass-field-clouds-Windows_XP.jpg&f=1&nofb=1');transition:1.5s;";
         }
     }
 
