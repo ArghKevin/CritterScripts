@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              HamsterHelper
 // @namespace         http://discord.gg/G3PTYPy
-// @version           5
+// @version           6
 // @require           http://code.jquery.com/jquery-3.4.1.min.js
 // @UpdateUrl         https://github.com/ArghKevin/CritterScripts/raw/master/HamsterHelper.user.js
 // @description       This script will put your BoxCritters client on adderall, with some acid sprinkled in for good measure
@@ -28,6 +28,9 @@ var jokes = [
     {"j":"What do you call a hamster that can't run in a wheel?","p":"fat"},
     {"j":"What happens when two snails get into a fight?","p":"They pull out their shotguns and their slugs"},
     {"j":"*Knock Knock*","p":"Joe Mama"},
+    {"j":"What do you call a Hamster in space?","p":"lost"},
+    {"j":"What is a hamster's favorite food?","p":"animal crackers"},
+    {"j":"Hotel?","p":"Trivago."}
 ]
 
 var delay = ( function() {
@@ -58,7 +61,7 @@ window.addEventListener('load', function() {
     var OGHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="OG"><label class="form-check-label" for="OG" style="color:#2897BD;">OG</label></span></div>`;
     var GreenHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Green"><label class="form-check-label" for="Green" style="color:#14A40B;">Green</label></span></div>`;
     var YellowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Yellow"><label class="form-check-label" for="Yellow" style="color:#E1B100;">Yellow</label></span></div>`;
-    var GradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Gradient"><label class="form-check-label" for="Gradient" style="color:#000000;">Gradient(wip)</label></span></div>`;
+    var GradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Gradient"><label class="form-check-label" for="Gradient" style="color:#000000;">pypy Gradient</label></span></div>`;
     var lightmodeHTML = `<div id="lmDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="lightmode"><label class="form-check-label" for="lightmode" style="color:#000000;">Light Mode</label></span></div>`;
     var freeitemBtnHTML = `<span class="input-group-btn"><button id="freeitembtn" class="btn btn-primary">new items</button></span>`;
     var JoinTavernBtnHTML = `<span class="input-group-btn"><button id="JoinTavernbtn" class="btn btn-primary">Join Tavern</button></span>`;
@@ -70,9 +73,11 @@ window.addEventListener('load', function() {
     var ExtraBtnHTML = `<span class="input-group-btn"><button id="Extrabtn" class="btn btn-primary">hey</button></span>`;
     var BEEPBtnHTML = `<span class="input-group-btn"><button id="BEEPbtn" class="btn btn-primary">BEEP!</button></span>`;
     var InvisibleBtnHTML = `<span class="input-group-btn"><button id=InvisibleBtn" class="btn btn-lg" for="Invisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" onClick="FontChange">fontchange</button></span>`
-    var SecondInvisibleBtnHTML = `<span class="input-group-btn"><button id=SecondInvisibleBtn" class="btn btn-lg" for="SecondInvisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default; onClick="$enable-gradients" ()">P  a  u  s  e_____</button></span>`
+    var SecondInvisibleBtnHTML = `<span class="input-group-btn"><button id=SecondInvisibleBtn" class="btn btn-lg" for="SecondInvisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default; onclick="alert('hey')";>c u s t o m    a l e r t</button></span>`
     var LogoutBtnHTML = `<span class="input-group-btn"><button id="Logoutbtn" class="btn btn-primary" onclick="world.logout()">ez Logout</button></span>`;
-var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="btn btn-primary" onclick="world.login(myPlayer.sessionTicket)">relog</button></span>`;
+    var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="btn btn-primary" onclick="world.login(myPlayer.sessionTicket)">relog</button></span>`;
+    var BluesGradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="BluesGradient"><label class="form-check-label" for="BluesGradient" style="color:#000000;">Gradient(blues)</label></span></div>`;
+    var RainbowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Rainbow"><label class="form-check-label" for="Rainbow" style="color:#000000;">RAINBOW</label></span></div>`;
     chatBar.insertAdjacentHTML('afterend', clapBtnHTML);
     chatBar.insertAdjacentHTML('afterend', jokeBtnHTML);
     chatBar.insertAdjacentHTML('afterend', BEEPBtnHTML);
@@ -81,10 +86,12 @@ var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="b
     chatBar.insertAdjacentHTML('afterend', balloonoffBtnHTML);
     chatBar.insertAdjacentHTML('afterend', nametagsonoffBtnHTML);
     chatBar.insertAdjacentHTML('afterend', freeitemBtnHTML);
+    chatBox.insertAdjacentHTML('afterend', RainbowHTML);
+    chatBox.insertAdjacentHTML('afterend', BluesGradientHTML);
     chatBox.insertAdjacentHTML('afterend', GradientHTML);
-        chatBox.insertAdjacentHTML('afterend', YellowHTML);
-        chatBox.insertAdjacentHTML('afterend', GreenHTML);
-        chatBox.insertAdjacentHTML('afterend', OGHTML);
+    chatBox.insertAdjacentHTML('afterend', YellowHTML);
+    chatBox.insertAdjacentHTML('afterend', GreenHTML);
+    chatBox.insertAdjacentHTML('afterend', OGHTML);
     chatBox.insertAdjacentHTML('afterend', RedHTML);
     chatBox.insertAdjacentHTML('afterend', LightBlueHTML);
     chatBox.insertAdjacentHTML('afterend', BlueHTML);
@@ -94,7 +101,7 @@ var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="b
     chatBox.insertAdjacentHTML('afterend', lightmodeHTML);
     chatBar.insertAdjacentHTML('afterend', LogoutBtnHTML);
     chatBox.insertAdjacentHTML('afterend', xxtraBtnHTML);
-        chatBox.insertAdjacentHTML('afterend', JoinChristmasTavernBtnHTML);
+    chatBox.insertAdjacentHTML('afterend', JoinChristmasTavernBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinCrashSiteBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinForestBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinSnowmanVillageBtnHTML);
@@ -115,25 +122,76 @@ var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="b
         document.body.style = "background-color:rgb(160, 0, 310);";
         document.getElementById("Purple").checked = true;
     }
-
-    if (localStorage.getItem("theme") == "Gradient") {
-        document.body.style = "background-color:rgb(76, 0, 164);";
-        delay(function(){
-            document.body.style = "background-color:#2d57ed;transition:1.5s";
-        delay(function(){
-            document.body.style = "background-color:#e6434b;transition:2.5s";
-            delay(function(){
-            document.body.style = "background-color:#2a475c;transition:2.5s";
+if (localStorage.getItem("theme") == "Gradient") {
+    document.body.style = "background-color:rgb(76, 0, 164);";
                 delay(function(){
-            document.body.style = "background-color:#71e643;transition:2.5s";
-                    delay(function(){
             document.body.style = "background-color:#e6d243;transition:1.5s";
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-            }, 2000 );
-            }, 2000 );
+        }, 1000 );
         document.getElementById("Gradient").checked = true;
+    }
+if (localStorage.getItem("theme") == "BluesGradient") {
+    document.body.style = "background-color:#1cd2ff;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#1c59ff;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+
+                                    }, 1000 );
+                                }, 1000 );
+                            }, 1000 );
+        document.getElementById("BluesGradient").checked = true;
+    }
+    if (localStorage.getItem("theme") == "Rainbow") {
+document.body.style = "background-color:#ff1f26;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                        delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                            delay(function(){
+            document.body.style = "background-color:#7e30c7;transition:1.5s";
+                                                delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                                        delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                                                delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                                                                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                                                                        delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+                                                }, 1000 );
+                                            }, 1000 );
+                                        }, 1000 );
+                                    }, 1000 );
+                                }, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+
+        document.getElementById("Rainbow").checked = true;
     }
 
     if (localStorage.getItem("theme") == "Blue") {
@@ -172,6 +230,9 @@ var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="b
 function JoinSnowmanVillage() {
     world.sendMessage("/join snowman_village")
 }
+    function Function1() {
+    alert('c u s t o m   a l e r t');
+    }
 function FontChange(){
     document.getElementById("Popbtn").style.fontFamily =
         "Impact,Charcoal,sans-serif";
@@ -200,7 +261,7 @@ function BEEP() {
         world.sendMessage(joke.j);
         delay(function(){
             world.sendMessage(joke.p);
-        }, 6000 );
+        }, 5000 );
     }
 
     function sendClap() {
@@ -277,47 +338,46 @@ function BEEP() {
         world.sendMessage("/missed");
                                                                                                                                                     delay(function(){
         world.sendMessage("/tbt");
-
                                                                                                                                                       delay(function(){
         world.sendMessage("/join crash_site");
 
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
     }
 
     function balloonoff() {
@@ -354,12 +414,131 @@ function BEEP() {
     function GradientToggle() {
             if(GradientBox.checked == true) {
         localStorage.setItem("theme", "Gradient");
-                document.body.style = "background-color:rgb(160, 0, 310);transition:1s";
+                document.body.style = "background-color:rgb(160, 0, 310);transition:4s";
             delay(function(){
-            document.body.style = "background-color:#e6d243;transition:1.5s";
-        }, 2000 );
+            document.body.style = "background-color:#e6d243;transition:4s";
+        }, 1000 );
+
     }
-        }
+    }
+    function BluesGradientToggle() {
+            if(GradientBox.checked == true) {
+        document.body.style = "background-color:#1cd2ff;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#1c59ff;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+
+                                    }, 1000 );
+                                }, 1000 );
+                            }, 1000 );
+
+    }
+    }
+function RainbowToggle() {
+            if(RainbowBox.checked == true) {
+document.body.style = "background-color:#ff1f26;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                        delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                            delay(function(){
+            document.body.style = "background-color:#7e30c7;transition:1.5s";
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+    }
+    }
+
+    if (localStorage.getItem("theme") == "Gradient") {
+                document.body.style = "background-color:rgb(160, 0, 310);transition:4s";
+            delay(function(){
+            document.body.style = "background-color:#e6d243;transition:4s";
+        }, 4000 );
+ document.getElementById("Gradient").checked = true;
+    }
+
+    if (localStorage.getItem("theme") == "BluesGradient") {
+                document.body.style = "background-color:#1cd2ff;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#1c59ff;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+
+                                    }, 1000 );
+                                }, 1000 );
+                            }, 1000 );
+ document.getElementById("BluesGradient").checked = true;
+    }
+
+    if (localStorage.getItem("theme") == "Rainbow") {
+document.body.style = "background-color:#ff1f26;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                        delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                            delay(function(){
+            document.body.style = "background-color:#7e30c7;transition:1.5s";
+                                                delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                                        delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                                                delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                                                                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                                                                        delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+                                                }, 1000 );
+                                            }, 1000 );
+                                        }, 1000 );
+                                    }, 1000 );
+                                }, 1000 );
+                            }, 1000 );
+}, 1000 );
+}, 1000 );
+ document.getElementById("Rainbow").checked = true;
+    }
             function BlueToggle() {
         if(BlueBox.checked == true) {
             localStorage.setItem("theme", "Blue");
@@ -415,10 +594,10 @@ function BEEP() {
                     delay(function(){
         world.sendMessage("/tbt");
 
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
-        }, 2000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
+        }, 1000 );
     }
 
     var jokeBtn = document.querySelector ("#jokebtn");
@@ -457,6 +636,14 @@ function BEEP() {
     var GradientBox = document.querySelector ("#Gradient");
     if (GradientBox) {
         GradientBox.addEventListener ("click", GradientToggle, false);
+    }
+    var BluesGradientBox = document.querySelector ("#BluesGradient");
+    if (BluesGradientBox) {
+        BluesGradientBox.addEventListener ("click", BluesGradientToggle, false);
+    }
+    var RainbowBox = document.querySelector ("#Rainbow");
+    if (RainbowBox) {
+        RainbowBox.addEventListener ("click", RainbowToggle, false);
     }
 var BlueBox = document.querySelector ("#Blue");
     if (BlueBox) {
@@ -527,6 +714,83 @@ var BlueBox = document.querySelector ("#Blue");
     if (BEEPBtn) {
         BEEPBtn.addEventListener ("click", BEEP);
     }
+    setInterval(function(){alert("Hello"); }, 500000);
+
+    setInterval(function(){if(GradientBox.checked == true) {
+
+        localStorage.setItem("theme", "Gradient");
+                    document.body.style = "background-color:rgb(160, 0, 255);transition:4s";
+            delay(function(){
+            document.body.style = "background-color:#FFFF00;transition:4s";
+    }, 4000 );
+    }
+    }, 8000);
+
+    setInterval(function(){if(BluesGradientBox.checked == true) {
+
+        document.body.style = "background-color:#1cd2ff;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#1c59ff;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#1ca8ff;transition:1.5s";
+
+                                    }, 1000 );
+                                }, 1000 );
+                            }, 1000 );
+    }
+    }, 8000);
+
+    setInterval(function(){if(RainbowBox.checked == true) {
+document.body.style = "background-color:#ff1f26;transition:1.5s";
+                delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                        delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                        delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                            delay(function(){
+            document.body.style = "background-color:#7e30c7;transition:1.5s";
+                                                delay(function(){
+            document.body.style = "background-color:#bf30c7;transition:1.5s";
+                                                    delay(function(){
+            document.body.style = "background-color:#1957ff;transition:1.5s";
+                                                        delay(function(){
+            document.body.style = "background-color:#19abff;transition:1.5s";
+                                                            delay(function(){
+            document.body.style = "background-color:#48941c;transition:1.5s";
+                                                                delay(function(){
+            document.body.style = "background-color:#6bd930;transition:1.5s";
+                                                                    delay(function(){
+            document.body.style = "background-color:#ffd21f;transition:1.5s";
+                                                                        delay(function(){
+            document.body.style = "background-color:#ff841f;transition:1.5s";
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+}, 1000 );
+    }
+    }, 14000);
 }, true);
 
 
