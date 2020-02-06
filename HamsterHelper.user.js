@@ -17,7 +17,6 @@ var favicon_link_html = document.createElement('link');
 favicon_link_html.rel = 'icon';
 favicon_link_html.href = 'https://cdn.discordapp.com/attachments/395187780600201217/570214992100720640/CustomBeaverTwitter.png';
 favicon_link_html.type = 'image/x-icon';
-
 try {
   document.getElementsByTagName('head')[0].appendChild( favicon_link_html );
 }
@@ -52,17 +51,6 @@ window.addEventListener('load', function() {
     var clapBtnHTML = `<span class="input-group-btn"><button id="clapbtn" class="btn" for="clapBtn" style="background-color:black; border-color:#71e643; color:#71e643">Items</button></span>`;
     var balloonoffBtnHTML = `<span class="input-group-btn"><button id="balloonoffbtn" class="btn btn-primary">Chat Balloons On/Off</button></span>`;
     var nametagsonoffBtnHTML = `<span class="input-group-btn"><button id="nametagsonoffbtn" class="btn btn-primary">Name Tags On/Off</button></span>`;
-    var spacemodeHTML = `<div id="smDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="spacemode"><label class="form-check-label" for="spacemode" style="color:#000000;">WIndows</label></span></div>`;
-    var darkmodeHTML = `<div id="dmDiv" class="row justify-content-center"><span><input class="form-radio-input" type="checkbox" value="" id="darkmode"><label class="form-check-label" for="darkmode" style="color:#000000;">Dark Mode</label></span></div>`;
-    var PurpleHTML = `<div id="pDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Purple"><label class="form-check-label" for="Purple" style="color:rgb(76, 0, 164);">PURPLE</label></span></div>`;
-    var BlueHTML = `<div id="bDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Blue"><label class="form-check-label" for="Blue" style="color:#2A2D99;">Blue</label></span></div>`;
-    var LightBlueHTML = `<div id="lbDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="LightBlue"><label class="form-check-label" for="LightBlue" style="color:#007CFF;">LightBlue</label></span></div>`;
-    var RedHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Red"><label class="form-check-label" for="Red" style="color:#D1111B;">Red</label></span></div>`;
-    var OGHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="OG"><label class="form-check-label" for="OG" style="color:#2897BD;">OG</label></span></div>`;
-    var GreenHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Green"><label class="form-check-label" for="Green" style="color:#14A40B;">Green</label></span></div>`;
-    var YellowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Yellow"><label class="form-check-label" for="Yellow" style="color:#E1B100;">Yellow</label></span></div>`;
-    var GradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Gradient"><label class="form-check-label" for="Gradient" style="color:#000000;">pypy Gradient</label></span></div>`;
-    var lightmodeHTML = `<div id="lmDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="lightmode"><label class="form-check-label" for="lightmode" style="color:#000000;">Light Mode</label></span></div>`;
     var freeitemBtnHTML = `<span class="input-group-btn"><button id="freeitembtn" class="btn btn-primary">new items</button></span>`;
     var JoinTavernBtnHTML = `<span class="input-group-btn"><button id="JoinTavernbtn" class="btn btn-primary">Join Tavern</button></span>`;
     var JoinSnowmanVillageBtnHTML = `<span class="input-group-btn"><button id="JoinSnowmanVillagebtn" class="btn btn-primary">Join Snowman Village</button></span>`;
@@ -76,8 +64,22 @@ window.addEventListener('load', function() {
     var SecondInvisibleBtnHTML = `<span class="input-group-btn"><button id=SecondInvisibleBtn" class="btn btn-lg" for="SecondInvisible" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default; onclick="alert('hey')";>c u s t o m    a l e r t</button></span>`
     var LogoutBtnHTML = `<span class="input-group-btn"><button id="Logoutbtn" class="btn btn-primary" onclick="world.logout()">ez Logout</button></span>`;
     var xxtraBtnHTML = `<span class="input-group-btn"><button id="xxtrabtn" class="btn btn-primary" onclick="world.login(myPlayer.sessionTicket)">relog</button></span>`;
-    var BluesGradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="BluesGradient"><label class="form-check-label" for="BluesGradient" style="color:#000000;">Gradient(blues)</label></span></div>`;
-    var RainbowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-check-input" type="checkbox" value="" id="Rainbow"><label class="form-check-label" for="Rainbow" style="color:#000000;">RAINBOW</label></span></div>`;
+    var BluesGradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="BluesGradient"><label class="form-check-label" for="BluesGradient" style="color:#000000;">Gradient(blues)</label></span></div>`;
+    var RainbowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Rainbow"><label class="form-check-label" for="Rainbow" style="color:#000000;">Rainbow</label></span></div>`;
+    var radgradHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="radgrad"><label class="form-check-label" for="radgrad" style="color:#000000;">radgrad(trippy)</label></span></div>`;
+    var kevinHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="kevin"><label class="form-check-label" for="kevin" style="color:#000000;">kevin.exe</label></span></div>`;
+     var spacemodeHTML = `<div id="smDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="spacemode"><label class="form-check-label" for="spacemode" style="color:#000000;">WIndows</label></span></div>`;
+    var darkmodeHTML = `<div id="dmDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="darkmode"><label class="form-check-label" for="darkmode" style="color:#000000;">Dark Mode</label></span></div>`;
+    var PurpleHTML = `<div id="pDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Purple"><label class="form-check-label" for="Purple" style="color:rgb(76, 0, 164);">PURPLE</label></span></div>`;
+    var BlueHTML = `<div id="bDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Blue"><label class="form-check-label" for="Blue" style="color:#2A2D99;">Blue</label></span></div>`;
+    var LightBlueHTML = `<div id="lbDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="LightBlue"><label class="form-check-label" for="LightBlue" style="color:#007CFF;">LightBlue</label></span></div>`;
+    var RedHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Red"><label class="form-check-label" for="Red" style="color:#D1111B;">Red</label></span></div>`;
+    var OGHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="OG"><label class="form-check-label" for="OG" style="color:#2897BD;">OG</label></span></div>`;
+    var GreenHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Green"><label class="form-check-label" for="Green" style="color:#14A40B;">Green</label></span></div>`;
+    var YellowHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Yellow"><label class="form-check-label" for="Yellow" style="color:#E1B100;">Yellow</label></span></div>`;
+    var GradientHTML = `<div id="rDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="Gradient"><label class="form-check-label" for="Gradient" style="color:#000000;">purpleorange Gradient</label></span></div>`;
+    var lightmodeHTML = `<div id="lmDiv" class="row justify-content-center"><span><input class="form-radio-input" type="radio" name="tangerine" value="" id="lightmode"><label class="form-check-label" for="lightmode" style="color:#000000;">Light Mode</label></span></div>`;
+   var audioplayer = '<audio controls> <source src="http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3" type="audio/mpeg">'
     chatBar.insertAdjacentHTML('afterend', clapBtnHTML);
     chatBar.insertAdjacentHTML('afterend', jokeBtnHTML);
     chatBar.insertAdjacentHTML('afterend', BEEPBtnHTML);
@@ -86,6 +88,7 @@ window.addEventListener('load', function() {
     chatBar.insertAdjacentHTML('afterend', balloonoffBtnHTML);
     chatBar.insertAdjacentHTML('afterend', nametagsonoffBtnHTML);
     chatBar.insertAdjacentHTML('afterend', freeitemBtnHTML);
+    chatBox.insertAdjacentHTML('afterend', radgradHTML);
     chatBox.insertAdjacentHTML('afterend', RainbowHTML);
     chatBox.insertAdjacentHTML('afterend', BluesGradientHTML);
     chatBox.insertAdjacentHTML('afterend', GradientHTML);
@@ -97,26 +100,37 @@ window.addEventListener('load', function() {
     chatBox.insertAdjacentHTML('afterend', BlueHTML);
     chatBox.insertAdjacentHTML('afterend', PurpleHTML);
     chatBox.insertAdjacentHTML('afterend', spacemodeHTML);
+        chatBox.insertAdjacentHTML('afterend', kevinHTML);
     chatBox.insertAdjacentHTML('afterend', darkmodeHTML);
     chatBox.insertAdjacentHTML('afterend', lightmodeHTML);
     chatBar.insertAdjacentHTML('afterend', LogoutBtnHTML);
+        chatBox.insertAdjacentHTML('afterend', audioplayer);
     chatBox.insertAdjacentHTML('afterend', xxtraBtnHTML);
+
     chatBox.insertAdjacentHTML('afterend', JoinChristmasTavernBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinCrashSiteBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinForestBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinSnowmanVillageBtnHTML);
     chatBox.insertAdjacentHTML('afterend', JoinTavernBtnHTML);
-        chatBox.insertAdjacentHTML('afterend', SecondInvisibleBtnHTML);
+
+    chatBox.insertAdjacentHTML('afterend', SecondInvisibleBtnHTML);
     chatBox.insertAdjacentHTML('afterend', InvisibleBtnHTML);
 
     if (localStorage.getItem("theme") == "space") {
         document.body.style = "background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2015%2F12%2F126274-nature-landscape-sky-hill-grass-field-clouds-Windows_XP.jpg&f=1&nofb=1');";
         document.getElementById("spacemode").checked = true;
     }
-
+        if (localStorage.getItem("theme") == "kevin") {
+        document.body.style = "background-color:#001FFF;transition:1.5s";
+        delay(function(){
+                document.body.style = "background-color:#FFFB00;transition:1.5s";
+        }, 1 );
+        document.getElementById("kevin").checked = true;
+    }
     if (localStorage.getItem("theme") == "dark") {
         document.body.style = "background-color:rgb(16, 21, 31);";
         document.getElementById("darkmode").checked = true;
+
     }
     if (localStorage.getItem("theme") == "Purple") {
         document.body.style = "background-color:rgb(160, 0, 310);";
@@ -124,73 +138,50 @@ window.addEventListener('load', function() {
     }
 if (localStorage.getItem("theme") == "Gradient") {
     document.body.style = "background-color:rgb(76, 0, 164);";
-                delay(function(){
+                delay(function ooo(){
             document.body.style = "background-color:#e6d243;transition:1.5s";
-        }, 1000 );
+        }, 1500 );
         document.getElementById("Gradient").checked = true;
     }
 if (localStorage.getItem("theme") == "BluesGradient") {
     document.body.style = "background-color:#1cd2ff;transition:1.5s";
-                delay(function(){
+    delay(function(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
-                    delay(function(){
+            delay(function(){
             document.body.style = "background-color:#1c59ff;transition:1.5s";
-                        delay(function(){
+                    delay(function(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
-
-                                    }, 1000 );
-                                }, 1000 );
-                            }, 1000 );
+                                }, 1500 );
+                        }, 1500 );
+                }, 1500 );
         document.getElementById("BluesGradient").checked = true;
     }
     if (localStorage.getItem("theme") == "Rainbow") {
 document.body.style = "background-color:#ff1f26;transition:1.5s";
-                delay(function(){
+                delay(function d(){
             document.body.style = "background-color:#ff841f;transition:1.5s";
-                    delay(function(){
+                    delay(function e(){
             document.body.style = "background-color:#ffd21f;transition:1.5s";
-                        delay(function(){
+                        delay(function f(){
             document.body.style = "background-color:#6bd930;transition:1.5s";
-                            delay(function(){
+                            delay(function g(){
             document.body.style = "background-color:#48941c;transition:1.5s";
-                                delay(function(){
+                                delay(function h(){
             document.body.style = "background-color:#19abff;transition:1.5s";
-                                    delay(function(){
+                                    delay(function i(){
             document.body.style = "background-color:#1957ff;transition:1.5s";
-                                        delay(function(){
+                                        delay(function j(){
             document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                            delay(function(){
+                                            delay(function k(){
             document.body.style = "background-color:#7e30c7;transition:1.5s";
-                                                delay(function(){
-            document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                                    delay(function(){
-            document.body.style = "background-color:#1957ff;transition:1.5s";
-                                                        delay(function(){
-            document.body.style = "background-color:#19abff;transition:1.5s";
-                                                            delay(function(){
-            document.body.style = "background-color:#48941c;transition:1.5s";
-                                                                delay(function(){
-            document.body.style = "background-color:#6bd930;transition:1.5s";
-                                                                    delay(function(){
-            document.body.style = "background-color:#ffd21f;transition:1.5s";
-                                                                        delay(function(){
-            document.body.style = "background-color:#ff841f;transition:1.5s";
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-                                                }, 1000 );
-                                            }, 1000 );
-                                        }, 1000 );
-                                    }, 1000 );
-                                }, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-
+                                                        }, 1500 );
+                                                    }, 1500 );
+                                                }, 1500 );
+                                            }, 1500 );
+                                        }, 1500 );
+                                    }, 1500 );
+                                }, 1500 );
+                            }, 1500 );
         document.getElementById("Rainbow").checked = true;
     }
 
@@ -217,6 +208,10 @@ document.body.style = "background-color:#ff1f26;transition:1.5s";
     if (localStorage.getItem("theme") == "Yellow") {
         document.body.style = "background-color:#e6d243;";
         document.getElementById("Yellow").checked = true;
+    }
+    if (localStorage.getItem("theme") == "radgrad") {
+        document.body.style = "background-image: repeating-radial-gradient(red, yellow 10%, green 15%);";
+        document.getElementById("radgrad").checked = true;
     }
     if (localStorage.getItem("theme") == "light") {
         document.body.style = "background:url('https://cdn.discordapp.com/attachments/319000727332716544/570229430509895691/Light_Background.png;";
@@ -259,125 +254,167 @@ function BEEP() {
         document.getElementById("inputMessage").value="";
         var joke = jokes[(Math.floor(Math.random() * jokes.length))];
         world.sendMessage(joke.j);
-        delay(function(){
+        delay(function s(){
             world.sendMessage(joke.p);
         }, 5000 );
     }
+function esporte(){
+    world.sendMessage("/esporte")
+}
+    function critbits(){
+        world.sendMessage("/critbits")
+    }
+    function snowball(){
+        world.sendMessage("/snowball")
+    }
+    function squeeze(){
+        world.sendMessage("/squeeze")
+    }
+    function rocketsnail(){
+        world.sendMessage("/rocketsnail")
+    }
+        function andybulletin(){
+        world.sendMessage("/andybulletin")
+    }
+        function cute(){
+        world.sendMessage("/cute")
+    }
+        function oommgames(){
+        world.sendMessage("/oommgames")
+    }
+        function boxcritterswiki(){
+        world.sendMessage("/boxcritterswiki")
+    }
+        function d3boxcritters(){
+        world.sendMessage("/3dboxcritters")
+    }
+        function boxcritters3d(){
+        world.sendMessage("/boxcritters3d")
+    }
+        function goodnight(){
+        world.sendMessage("/goodnight")
+    }
+        function madeincanada(){
+        world.sendMessage("/madeincanada")
+    }
+        function thekeeper(){
+        world.sendMessage("/thekeeper")
+    }
+        function bunnyhug(){
+        world.sendMessage("/bunnyhug")
+    }
+        function rocketsnail(){
+        world.sendMessage("/rocketsnail")
+    }
+        function explore(){
+        world.sendMessage("/explore")
+    }
+        function greenplumber(){
+        world.sendMessage("/greenplumber")
+    }
+        function darkmode(){
+        world.sendMessage("/darkmode")
+    }
+        function duckhunter(){
+        world.sendMessage("/duckhunter")
+    }
+        function piratepack(){
+        world.sendMessage("/piratepack")
+    }
+        function pickle(){
+        world.sendMessage("/pickle")
+    }
+        function oscarproductions(){
+        world.sendMessage("/oscarproductions")
+    }
+        function livestream(){
+        world.sendMessage("/livestream")
+    }
+        function creative(){
+        world.sendMessage("/creative")
+    }
+        function boxcrittersguild(){
+        world.sendMessage("/boxcrittersguild")
+    }
+        function fun(){
+        world.sendMessage("/fun")
+    }
+        function forumcritters(){
+        world.sendMessage("/forumcritters")
+    }
+        function marco(){
+        world.sendMessage("/marco")
+    }
+        function adventure(){
+        world.sendMessage("/adventure")
+    }
+        function freeitem(){
+        world.sendMessage("/freeitem")
+    }
+        function redcross(){
+        world.sendMessage("/redcross")
+    }
+        function squeeze(){
+        world.sendMessage("/squeeze")
+    }
+        function imagination(){
+        world.sendMessage("/imagination")
+    }
+        function sparkle(){
+        world.sendMessage("/sparkle")
+    }
+        function tamago(){
+        world.sendMessage("/tamago")
+    }
+    function missed(){
+        world.sendMessage("/missed")
+    }
+    function tbt(){
+        world.sendMessage("/tbt")
+    }
+    function crashsite(){
+        world.sendMessage("/join crash_site")
+    }
+    function sendClap() {//39 items
+        esporte;
+        setTimeout(critbits, 1500)
+setTimeout(snowball, 3000)
+        setTimeout(squeeze, 4500)
+        setTimeout(rocketsnail, 6000)
+        setTimeout(andybulletin, 7500)
+        setTimeout(cute, 9000)
+        setTimeout(oommgames, 10500)
+        setTimeout(boxcritterswiki, 12000)
+        setTimeout(d3boxcritters, 13500)
+        setTimeout(boxcritters3d, 15000)
+        setTimeout(goodnight, 16500)
+        setTimeout(madeincanada, 18000)
+        setTimeout(thekeeper, 19500)
+        setTimeout(bunnyhug, 21000)
+        setTimeout(explore, 22500)
+        setTimeout(greenplumber, 24000)
+        setTimeout(darkmode, 25500)
+        setTimeout(duckhunter, 27000)
+        setTimeout(piratepack, 28500)
+        setTimeout(pickle,30000)
+        setTimeout(oscarproductions, 31500)
+        setTimeout(livestream, 33000)
+        setTimeout(creative, 34500)
+        setTimeout(boxcrittersguild, 36000)
+        setTimeout(fun, 37500)
+        setTimeout(forumcritters, 39000)
+        setTimeout(marco, 41000)
+        setTimeout(adventure, 42500)
+        setTimeout(freeitem, 44000)
+        setTimeout(redcross, 45500)
+        setTimeout(squeeze, 47000)
+        setTimeout(imagination, 48500)
+        setTimeout(sparkle, 50000)
+        setTimeout(tamago, 51500)
+        setTimeout(missed, 53000)
+        setTimeout(tbt, 54500)
+        setTimeout(crashsite, 56000)
 
-    function sendClap() {
-      world.sendMessage("/critbits");
-        delay(function(){
-        world.sendMessage("/esporte");
-            delay(function(){
-            world.sendMessage("/snowball");
-                delay(function(){
-            world.sendMessage("/squeeze");
-                    delay(function(){
-            world.sendMessage("/rocketsnail");
-                        delay(function(){
-            world.sendMessage("/andybulletin");
-                            delay(function(){
-            world.sendMessage("/cute");
-                                delay(function(){
-            world.sendMessage("/oommgames");
-                                    delay(function(){
-            world.sendMessage("/boxcritterswiki");
-                                        delay(function(){
-            world.sendMessage("/3dboxcritters");
-                                            delay(function(){
-            world.sendMessage("/boxcritters3d");
-                                                delay(function(){
-            world.sendMessage("/goodnight");
-                                                    delay(function(){
-            world.sendMessage("/madeincanada");
-                                                        delay(function(){
-            world.sendMessage("/thekeeper");
-                                                            delay(function(){
-            world.sendMessage("/bunnyhug");
-                                                                delay(function(){
-            world.sendMessage("/explore");
-                                                                    delay(function(){
-            world.sendMessage("/greenplumber");
-                                                                        delay(function(){
-            world.sendMessage("/darkmode");
-                                                                            delay(function(){
-            world.sendMessage("/duckhunter");
-                                                                                delay(function(){
-            world.sendMessage("/piratepack");
-                                                                                    delay(function(){
-            world.sendMessage("/pickle");
-                                                                                        delay(function(){
-            world.sendMessage("/oscarproductions");
-                                                                                            delay(function(){
-            world.sendMessage("/livestream");
-                                                                                                delay(function(){
-            world.sendMessage("/creative");
-                                                                                                    delay(function(){
-            world.sendMessage("/boxcrittersguild");
-                                                                                                        delay(function(){
-            world.sendMessage("/fun");
-                                                                                                            delay(function(){
-            world.sendMessage("/forumcritters");
-                                                                                                                delay(function(){
-            world.sendMessage("/marco");
-                                                                                                                    delay(function(){
-        world.sendMessage("/adventure");
-                                                                                                                        delay(function(){
-        world.sendMessage("/freeitem");
-                                                                                                                            delay(function(){
-        world.sendMessage("/redcross");
-                                                                                                                                delay(function(){
-        world.sendMessage("/squeeze");
-                                                                                                                                    delay(function(){
-        world.sendMessage("/imagination");
-                                                                                                                                        delay(function(){
-        world.sendMessage("/sparkle");
-                                                                                                                                            delay(function(){
-        world.sendMessage("/tamago");
-                                                                                                                                                delay(function(){
-        world.sendMessage("/missed");
-                                                                                                                                                    delay(function(){
-        world.sendMessage("/tbt");
-                                                                                                                                                      delay(function(){
-        world.sendMessage("/join crash_site");
-
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
     }
 
     function balloonoff() {
@@ -404,6 +441,15 @@ function BEEP() {
             document.body.style = "background-color:rgb(16, 21, 31);transition:1.5s";
         }
     }
+    function kevinToggle() {
+        if(kevinBox.checked == true) {
+            localStorage.setItem("theme", "kevin");
+            document.body.style = "background-color:#001FFF;transition:1.5s";
+        delay(function(){
+                document.body.style = "background-color:#FFFB00;transition:1.5s";
+        }, 1 );
+        }
+    }
 
         function PurpleToggle() {
         if(PurpleBox.checked == true) {
@@ -415,134 +461,115 @@ function BEEP() {
             if(GradientBox.checked == true) {
         localStorage.setItem("theme", "Gradient");
                 document.body.style = "background-color:rgb(160, 0, 310);transition:4s";
-            delay(function(){
-            document.body.style = "background-color:#e6d243;transition:4s";
-        }, 1000 );
+            document.body.style = "background-color:#FF9C16;transition:4s";
 
     }
     }
     function BluesGradientToggle() {
-            if(GradientBox.checked == true) {
+            if(BluesGradientBox.checked == true) {
         document.body.style = "background-color:#1cd2ff;transition:1.5s";
-                delay(function(){
+                delay(function bf(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
-                    delay(function(){
+                    delay(function bg(){
             document.body.style = "background-color:#1c59ff;transition:1.5s";
-                        delay(function(){
+                        delay(function bh(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
 
-                                    }, 1000 );
-                                }, 1000 );
-                            }, 1000 );
+                                    }, 1500 );
+                                }, 1500 );
+                            }, 1500 );
 
     }
     }
 function RainbowToggle() {
             if(RainbowBox.checked == true) {
 document.body.style = "background-color:#ff1f26;transition:1.5s";
-                delay(function(){
+                delay(function bi(){
             document.body.style = "background-color:#ff841f;transition:1.5s";
-                    delay(function(){
+                    delay(function bj(){
             document.body.style = "background-color:#ffd21f;transition:1.5s";
-                        delay(function(){
+                        delay(function bk(){
             document.body.style = "background-color:#6bd930;transition:1.5s";
-                            delay(function(){
+                            delay(function bl(){
             document.body.style = "background-color:#48941c;transition:1.5s";
-                                delay(function(){
+                                delay(function bm(){
             document.body.style = "background-color:#19abff;transition:1.5s";
-                                    delay(function(){
+                                    delay(function bn(){
             document.body.style = "background-color:#1957ff;transition:1.5s";
-                                        delay(function(){
+                                        delay(function bo(){
             document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                            delay(function(){
+                                            delay(function bp(){
             document.body.style = "background-color:#7e30c7;transition:1.5s";
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
     }
     }
 
     if (localStorage.getItem("theme") == "Gradient") {
                 document.body.style = "background-color:rgb(160, 0, 310);transition:4s";
-            delay(function(){
-            document.body.style = "background-color:#e6d243;transition:4s";
+            delay(function bq(){
+            document.body.style = "background-color:#FF9C16;transition:4s";
         }, 4000 );
  document.getElementById("Gradient").checked = true;
     }
 
     if (localStorage.getItem("theme") == "BluesGradient") {
                 document.body.style = "background-color:#1cd2ff;transition:1.5s";
-                delay(function(){
+                delay(function br(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
-                    delay(function(){
+                    delay(function bs(){
             document.body.style = "background-color:#1c59ff;transition:1.5s";
-                        delay(function(){
+                        delay(function bt(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
 
-                                    }, 1000 );
-                                }, 1000 );
-                            }, 1000 );
- document.getElementById("BluesGradient").checked = true;
+                                    }, 1500 );
+                                }, 1500 );
+                            }, 1500 );
     }
 
     if (localStorage.getItem("theme") == "Rainbow") {
 document.body.style = "background-color:#ff1f26;transition:1.5s";
-                delay(function(){
+                delay(function bu(){
             document.body.style = "background-color:#ff841f;transition:1.5s";
-                    delay(function(){
+                    delay(function bv(){
             document.body.style = "background-color:#ffd21f;transition:1.5s";
-                        delay(function(){
+                        delay(function bw(){
             document.body.style = "background-color:#6bd930;transition:1.5s";
-                            delay(function(){
+                            delay(function bx(){
             document.body.style = "background-color:#48941c;transition:1.5s";
-                                delay(function(){
+                                delay(function by(){
             document.body.style = "background-color:#19abff;transition:1.5s";
-                                    delay(function(){
+                                    delay(function bz(){
             document.body.style = "background-color:#1957ff;transition:1.5s";
-                                        delay(function(){
+                                        delay(function ca(){
             document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                            delay(function(){
+                                            delay(function cb(){
             document.body.style = "background-color:#7e30c7;transition:1.5s";
-                                                delay(function(){
-            document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                                    delay(function(){
-            document.body.style = "background-color:#1957ff;transition:1.5s";
-                                                        delay(function(){
-            document.body.style = "background-color:#19abff;transition:1.5s";
-                                                            delay(function(){
-            document.body.style = "background-color:#48941c;transition:1.5s";
-                                                                delay(function(){
-            document.body.style = "background-color:#6bd930;transition:1.5s";
-                                                                    delay(function(){
-            document.body.style = "background-color:#ffd21f;transition:1.5s";
-                                                                        delay(function(){
-            document.body.style = "background-color:#ff841f;transition:1.5s";
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-                                                }, 1000 );
-                                            }, 1000 );
-                                        }, 1000 );
-                                    }, 1000 );
-                                }, 1000 );
-                            }, 1000 );
-}, 1000 );
-}, 1000 );
- document.getElementById("Rainbow").checked = true;
+                                                }, 1500 );
+                                            }, 1500 );
+                                        }, 1500 );
+                                    }, 1500 );
+                                }, 1500 );
+                            }, 1500 );
+}, 1500 );
+}, 1500 );
     }
             function BlueToggle() {
         if(BlueBox.checked == true) {
             localStorage.setItem("theme", "Blue");
             document.body.style = "background-color:#2d57ed;transition:1.5s";
+        }
+    }
+    function radgradToggle() {
+        if(radgradBox.checked == true) {
+            localStorage.setItem("theme", "radgrad");
+            document.body.style = "background-image: repeating-radial-gradient(red, yellow 10%, green 15%)";
         }
     }
                 function LightBlueToggle() {
@@ -585,19 +612,19 @@ document.body.style = "background-color:#ff1f26;transition:1.5s";
     function freeitem() {
         document.getElementById("inputMessage").value="";
         world.sendMessage("/FreeItem");
-        delay(function(){
+        delay(function cj(){
         world.sendMessage("/darkmode");
-            delay(function(){
+            delay(function ck(){
         world.sendMessage("/explore");
-                delay(function(){
+                delay(function cl(){
         world.sendMessage("/missed");
-                    delay(function(){
+                    delay(function cm(){
         world.sendMessage("/tbt");
 
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
-        }, 1000 );
+        }, 1500 );
+        }, 1500 );
+        }, 1500 );
+        }, 1500 );
     }
 
     var jokeBtn = document.querySelector ("#jokebtn");
@@ -623,10 +650,18 @@ document.body.style = "background-color:#ff1f26;transition:1.5s";
     if (spacemodeBox) {
         spacemodeBox.addEventListener ("click", spacemodeToggle, false);
     }
+    var kevinBox = document.querySelector ("#kevin");
+    if (kevinBox) {
+        kevinBox.addEventListener ("click", kevinToggle, false);
+    }
 
     var darkmodeBox = document.querySelector ("#darkmode");
     if (darkmodeBox) {
         darkmodeBox.addEventListener ("click", darkmodeToggle, false);
+    }
+    var radgradBox = document.querySelector ("#radgrad");
+    if (radgradBox) {
+        radgradBox.addEventListener ("click", radgradToggle, false);
     }
 
     var PurpleBox = document.querySelector ("#Purple");
@@ -714,83 +749,101 @@ var BlueBox = document.querySelector ("#Blue");
     if (BEEPBtn) {
         BEEPBtn.addEventListener ("click", BEEP);
     }
-    setInterval(function(){alert("Hello"); }, 500000);
+    setInterval(function(){alert("Hello"); }, 5000000);
 
     setInterval(function(){if(GradientBox.checked == true) {
 
         localStorage.setItem("theme", "Gradient");
                     document.body.style = "background-color:rgb(160, 0, 255);transition:4s";
-            delay(function(){
-            document.body.style = "background-color:#FFFF00;transition:4s";
+            delay(function cn(){
+            document.body.style = "background-color:#FF9C16;transition:4s";
     }, 4000 );
     }
     }, 8000);
 
     setInterval(function(){if(BluesGradientBox.checked == true) {
-
         document.body.style = "background-color:#1cd2ff;transition:1.5s";
-                delay(function(){
+                delay(function co(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
-                    delay(function(){
+                    delay(function cp(){
             document.body.style = "background-color:#1c59ff;transition:1.5s";
-                        delay(function(){
+                        delay(function cq(){
             document.body.style = "background-color:#1ca8ff;transition:1.5s";
 
-                                    }, 1000 );
-                                }, 1000 );
-                            }, 1000 );
+                                    }, 1500 );
+                                }, 1500 );
+                            }, 1500 );
     }
-    }, 8000);
+    }, 6000);
 
     setInterval(function(){if(RainbowBox.checked == true) {
 document.body.style = "background-color:#ff1f26;transition:1.5s";
-                delay(function(){
+                delay(function cr(){
             document.body.style = "background-color:#ff841f;transition:1.5s";
-                    delay(function(){
+                    delay(function cs(){
             document.body.style = "background-color:#ffd21f;transition:1.5s";
-                        delay(function(){
+                        delay(function ct(){
             document.body.style = "background-color:#6bd930;transition:1.5s";
-                            delay(function(){
+                            delay(function cu(){
             document.body.style = "background-color:#48941c;transition:1.5s";
-                                delay(function(){
+                                delay(function cv(){
             document.body.style = "background-color:#19abff;transition:1.5s";
-                                    delay(function(){
+                                    delay(function cw(){
             document.body.style = "background-color:#1957ff;transition:1.5s";
-                                        delay(function(){
+                                        delay(function cx(){
             document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                            delay(function(){
+                                            delay(function cy(){
             document.body.style = "background-color:#7e30c7;transition:1.5s";
-                                                delay(function(){
-            document.body.style = "background-color:#bf30c7;transition:1.5s";
-                                                    delay(function(){
-            document.body.style = "background-color:#1957ff;transition:1.5s";
-                                                        delay(function(){
-            document.body.style = "background-color:#19abff;transition:1.5s";
-                                                            delay(function(){
-            document.body.style = "background-color:#48941c;transition:1.5s";
-                                                                delay(function(){
-            document.body.style = "background-color:#6bd930;transition:1.5s";
-                                                                    delay(function(){
-            document.body.style = "background-color:#ffd21f;transition:1.5s";
-                                                                        delay(function(){
-            document.body.style = "background-color:#ff841f;transition:1.5s";
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
-}, 1000 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
+}, 1500 );
     }
     }, 14000);
+    setInterval(function(){if(kevinBox.checked == true) {
+            document.body.style = "background-color:#001FFF;transition:1.5s";
+        delay(function(){
+                document.body.style = "background-color:#FFFB00;transition:1.5s";
+        }, 1 );
+    }
+    }, 3000);
+    if(GreenBox.checked == true) {
+        document.body.style = "background-color:#71e643;";
+    }
+            if(PurpleBox.checked == true) {
+                document.body.style = "background-color:rgb(160, 0, 310);";
+            }
+                    if(BlueBox.checked == true) {
+                        document.body.style = "background-color:#2d57ed;";
+                    }
+                            if(LightBlueBox.checked == true) {
+                                document.body.style = "background-color:#00b2ff;transition:1.5s";
+                            }
+                                    if(OGBox.checked == true) {
+                                                document.body.style = "background-color:#2a475c;";
+                                    }
+                                            if(YellowBox.checked == true) {
+                                                        document.body.style = "background-color:#e6d243;";
+                                            }
+                                                    if(radgradBox.checked == true) {
+                                                                document.body.style = "background-image: repeating-radial-gradient(red, yellow 10%, green 15%);";
+                                                    }
+                                                            if(lightmodeBox.checked == true) {
+        document.body.style = "background:url('https://cdn.discordapp.com/attachments/319000727332716544/570229430509895691/Light_Background.png;";
+                                                            }
+                                                                    if(darkmodeBox.checked == true) {
+                                                                                document.body.style = "background-color:rgb(16, 21, 31);";
+                                                                    }
+                                                                            if(RedBox.checked == true) {
+                                                                                        document.body.style = "background-image: repeating-radial-gradient(red, yellow 10%, green 15%);";
+                                                                            }
+                                                                                    if(spacemodeBox.checked == true) {
+                                                                                        document.body.style = "background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2015%2F12%2F126274-nature-landscape-sky-hill-grass-field-clouds-Windows_XP.jpg&f=1&nofb=1');";
+                                                                                    }
 }, true);
 
 
